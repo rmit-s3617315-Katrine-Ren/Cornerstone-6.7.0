@@ -10,6 +10,12 @@ https://developer.bigcommerce.com/stencil-docs/ZG9jOjIyMDcwMA-installing-stencil
 npm install --save-dev webpack
 
 ```
+or 
+```
+npm install 
+
+```
+
 
 ## Initialize a store locally
 ```
