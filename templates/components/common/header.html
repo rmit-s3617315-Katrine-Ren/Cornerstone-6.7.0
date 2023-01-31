@@ -1,0 +1,67 @@
+<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    {{#each (limit banners.top_metadata 1)}}
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+        <div data-event-type="promotion-click">
+            {{{this.content}}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+<header class="header" role="banner">
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+    </a>
+    {{> components/common/navigation}}
+    {{#if page_type '===' 'default'}}
+    <div class="header-main-container">
+      <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+            {{> components/common/store-logo}}
+        </h1>
+        <div class="header-quick-search">
+          <button class="navUser-action navUser-action--quickSearch"
+               type="button"
+               id="quick-search-expand"
+               data-search="quickSearch"
+               aria-controls="quickSearch"
+               aria-label="{{lang 'common.search'}}"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m19.55 20.575-6.3-6.275q-.75.625-1.725.975-.975.35-2 .35-2.575 0-4.35-1.775Q3.4 12.075 3.4 9.5q0-2.55 1.775-4.338 1.775-1.787 4.35-1.787 2.55 0 4.325 1.775 1.775 1.775 1.775 4.35 0 1.075-.35 2.05-.35.975-.95 1.7l6.275 6.275Zm-10.025-6.45q1.925 0 3.263-1.35 1.337-1.35 1.337-3.275 0-1.925-1.337-3.275-1.338-1.35-3.263-1.35-1.95 0-3.287 1.35Q4.9 7.575 4.9 9.5q0 1.925 1.338 3.275 1.337 1.35 3.287 1.35Z" stroke="black"/></svg>
+            </button>
+        </div>
+
+    </div>
+        
+        
+    {{else}}
+        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+            {{> components/common/store-logo}}
+        </div>
+    {{/if}}
+    <div class="navPages-container" id="menu" data-menu>
+        {{> components/common/navigation-menu}}
+    </div>
+    {{> components/common/banner-below-nav}}
+    {{{region name="header_navigation_bottom--global"}}}
+</header>
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}
+
+<section class="hero-banner">
+      <div class="hero-background" style="background-image: url('https://www.davidjones.com/images/assetimages/2022/ss/wk07/Homepage/hero_de2.jpg?2');">
+        <div class="space-35p m-hide" style="display:block;padding-bottom:35%"></div>
+        
+        <div class="hero-cta" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);">
+          <div class="hero-cta-container">
+            <img  src="https://www.davidjones.com/images/assetimages/2022/ss/Campaigns/SS22LaunchHub/ss22-ww-lockup.svg" alt="Spring Summer 22" title="Spring Summer 22"><br>
+            <img  src="https://www.davidjones.com/images/assetimages/2022/ss/Campaigns/SS22LaunchHub/ww-lockup.svg" alt="SS22 WONDERWORLD" title="SS22 WONDERWORLD">
+            <div></div>
+            <a class="cta-border pr-tracking-link" href="https://www.davidjones.com/women/new-in?pr_id=promo_ss22_1&amp;pr_name=ss22&amp;pr_creative=women&amp;pr_position=newseason">Women</a>
+            <a class="cta-border pr-tracking-link" href="https://www.davidjones.com/men/new-in?pr_id=promo_ss22_1&amp;pr_name=ss22&amp;pr_creative=men&amp;pr_position=newseason">Men</a>
+            <a class="cta-border pr-tracking-link" href="https://www.davidjones.com/kids/new-in?pr_id=promo_ss22_1&amp;pr_name=ss22&amp;pr_creative=kids&amp;pr_position=newseason">Kids</a>
+          </div>
+        </div>
+      </div>
+    </section>
